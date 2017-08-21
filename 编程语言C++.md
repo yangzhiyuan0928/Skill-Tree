@@ -332,7 +332,9 @@ C/C++的内容又多又杂，常常看到有人罗列相关书单，觉得毫无
     - 虚指针指向虚表结构。
 
 14. is-a和has-a
+
     - public继承是is-a。
+    
     - private/prrotect继承是has-a。
 ---
 
