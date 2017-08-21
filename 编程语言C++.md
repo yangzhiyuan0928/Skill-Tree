@@ -334,8 +334,9 @@ C/C++的内容又多又杂，常常看到有人罗列相关书单，觉得毫无
 14. is-a和has-a
 
     - public继承是is-a。
-    
+
     - private/prrotect继承是has-a。
+    
 ---
 
 ### <span id = "stl">标准模板库</span>
