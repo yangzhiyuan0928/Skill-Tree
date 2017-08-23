@@ -333,9 +333,11 @@ C/C++的内容又多又杂，常常看到有人罗列相关书单，觉得毫无
 
 14. is-a与has-a？
 
-    - public是is-a。
+    - public 继承是is-a。
 
-    - private/protected继承是has-a。
+    - private / protected 继承是has-a。
+
+
 
 ---
 
