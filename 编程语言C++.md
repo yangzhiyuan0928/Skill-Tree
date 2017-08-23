@@ -55,17 +55,17 @@ C/C++的内容又多又杂，常常看到有人罗列相关书单，觉得毫无
 6. static作用是什么？在C和C++中有何区别？
     - static可以修饰局部变量（静态局部变量）、全局变量（静态全局变量）和函数，被修饰的变量存储位置在静态区。
 
-    - static局部变量：相对于一般局部变量其生命周期长，直到程序运行结束而非函数调用结束，且只在第一次被调用时定义；
+    - static局部变量：相对于一般局部变量其生命周期长，直到程序运行结束而非函数调用结束，且只在第一次被调用时定义；
 
-    - static全局变量：相对于全局变量其可见范围被缩小，只能在本文件中可见；
+    - static全局变量：相对于全局变量其可见范围被缩小，只能在本文件中可见；
 
-    - static函数：限定函数的作用范围，使得仅在所在源文件有效，其他文件中不可调用；其他文件中可以定义相同名字的函数。
-    
+    - static函数：限定函数的作用范围，使得仅在所在源文件有效，其他文件中不可调用；其他文件中可以定义相同名字的函数。
+
     - C++的static除了上述两种用途，还可以修饰类成员（静态成员变量和静态成员函数），静态成员变量和静态成员函数不属于任何一个对象，是所有类实例所共有。
 
-    - static类成员变量：相当于类的全局变量，被类的所有对象共享；static成员变量必须在类外进行初始化，只有const修饰的static成员变量可在类内初始化。
+    - static类成员变量：相当于类的全局变量，被类的所有对象共享；static成员变量必须在类外进行初始化，只有const修饰的static成员变量可在类内初始化。
 
-    - static类成员函数：所有对象共享，不含this指针；实现时不需要加static修饰符；不能引用类中声明的非静态成员，可引用类中静态成员。
+    - static类成员函数：所有对象共享，不含this指针；实现时不需要加static修饰符；不能引用类中声明的非静态成员，可引用类中静态成员。
 
     - static的数据记忆性可以满足函数在不同调用期的通信，也可以满足同一个类的多个实例间的通信。
     
@@ -361,32 +361,33 @@ C/C++的内容又多又杂，常常看到有人罗列相关书单，觉得毫无
 
 16. const_cast/static_cast/dynamic_cast的区别
 
-    - const_cast<new type> (expression)
-    
-        - 该运算符用来修改类型的const或volatile属性。除了const 或volatile修饰之外， type_id和expression的类型是一样的。例如：
-            
+    - const_cast<new type> (expression)
+
+        - 该运算符用来修改类型的const或volatile属性。除了const 或volatile修饰之外， type_id和expression的类型是一样的。例如：
+
             常量指针被转化成非常量的指针，并且仍然指向原来的对象；
-            
+
             常量引用被转换成非常量的引用，并且仍然指向原来的对象；
 
-        - const_cast一般用于修改底指针。如const char *p形式。
-    
-        - 去除const属性还可用关键字mutable，例如mutable声明的成员变量，可在const成员函数中被修改，mutable释放const成员函数的bitwise const约束。
-    
-    - static_cast<new type> (rxpression)
+        - const_cast一般用于修改底指针。如const char *p形式。
 
-        - 该运算符把expression转换为type-id类型，但没有运行时类型检查来保证转换的安全性。有点类似强制类型转换，使用情景如下：
+        - 去除const属性还可用关键字mutable，例如mutable声明的成员变量，可在const成员函数中被修改，mutable释放const成员函数的bitwise const约束。
+
+    - static_cast<new type> (rxpression)
+
+        - 该运算符把expression转换为type - id类型，但没有运行时类型检查来保证转换的安全性。有点类似强制类型转换，使用情景如下：
             ● 用于类层次结构中基类（父类）和派生类（子类）之间指针或引用的转换。
                 上行转换(把派生类的指针或引用转换成基类表示)是安全的；
                 下行转换(把基类指针或引用转换成派生类表示)时，由于没有动态类型检查，所以不安全；
             ● 基础数据类型之间的转换
             ● 空指针转换成目的类型的空指针
             ● 把任何类型的表达式转换成void类型
-        - static_cast不能转换掉expression的const、volatile或者__unaligned属性。
+        - static_cast不能转换掉expression的const、volatile或者__unaligned属性。
 
-    - dynamic_cast<new_type> (expression)
+    - dynamic_cast<new_type> (expression)
 
         - dynamic_cast主要用于类层次间的上行转换和下行转换，此时效果与static_cast相同，但具有类型检查的功能，比static_cast更安全。
+
 
 ---
 
