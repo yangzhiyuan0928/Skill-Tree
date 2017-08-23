@@ -487,7 +487,7 @@ STL内容虽然看起来很多，单独成书都不是问题（《STL源码剖�
 用法：
 
         定义：
-            mao<T_key, T_value> map;
+            map<T_key, T_value> map;
 
         插入元素：
             map.insert(pair<T_key, T_value>(key, value));    // 同key不插入
