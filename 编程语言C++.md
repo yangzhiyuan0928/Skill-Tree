@@ -331,12 +331,13 @@ C/C++的内容又多又杂，常常看到有人罗列相关书单，觉得毫无
 
     - 虚指针指向虚表结构。
 
+
 14. is-a与has-a？
 
     - public继承是is-a。
 
-    - private、protect继承是has-a。
- 
+    - private/protected继承是has-a。
+
 ---
 
 ### <span id = "gp">泛型编程基础</span>
